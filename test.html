@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miracle Hearing Aids</title>
+    <style>
+        /* CSS Styles */
+        
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        
+        body[dir="rtl"] {
+            direction: rtl;
+        }
+        
+        body[dir="ltr"] {
+            direction: ltr;
+        }
+        
+        header {
+            background-color: #ffffff;
+            padding: 10px 20px;
+            color: #1ad1df;
+            display: flex;
+            align-items: center;
+            height: auto;
+            justify-content: space-between;
+        }
+        
+        .logo {
+            max-width: 100px;
+            margin-right: 20px;
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 1.8rem;
+        }
+        
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-grow: 1;
+        }
+        
+        nav ul li {
+            margin: 0 15px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: #1ad1df;
+            font-weight: bold;
+        }
+        
+        .hero {
+            position: relative;
+            text-align: center;
+            overflow: hidden;
+            height: 450px;
+        }
+        
+        .hero-text {
+            position: absolute;
+            /* Positioning the text over the video */
+            top: 50%;
+            /* Center vertically */
+            left: 50%;
+            /* Center horizontally */
+            transform: translate(-50%, -50%);
+            /* Adjust for perfect centering */
+            text-align: center;
+            color: white;
+            z-index: 1;
+            /* Ensure text appears on top of video */
+        }
+        
+        #background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* تغطية عرض الصفحة */
+            object-fit: cover;
+            /* ضبط الفيديو ليغطي العنصر بشكل كامل */
+            z-index: -1;
+            /* تأكد من أن الفيديو خلف المحتوى */
+        }
+        
+        .hero h1,
+        .hero p,
+        .hero a {
+            position: relative;
+            z-index: 1;
+            /* تأكد أن النص فوق الفيديو */
+            color: rgb(247, 247, 247);
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin: 20px 0;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #0d47a1;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        
+        section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        .products,
+        .services {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        
+        .product,
+        .service {
+            margin: 20px;
+            max-width: 300px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            background-color: #fff;
+        }
+        
+        .product img {
+            width: 100%;
+            height: auto;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 15px;
+        }
+        
+        footer {
+            background-color: #1ad1df;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+        /* Style for the language ListBox */
+        
+        #languageSwitcher {
+            font-size: 16px;
+            padding: 8px;
+            background-color: #1ad1df;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+        }
+        
+        #languageSwitcher select {
+            background-color: #fff;
+            color: #1ad1df;
+            font-size: 16px;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        .contact-form {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        .contact-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #1ad1df;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body dir="ltr">
+    <!-- Header -->
+    <header>
+        <img src="Images/5827826298171539790.png" alt="Miracle Hearing Aids Logo" class="logo">
+
+        <nav>
+            <ul>
+                <li><a href="#about" class="about-us">About Us</a></li>
+                <li><a href="#products" class="products-link">Products</a></li>
+                <li><a href="#services" class="services-link">Services</a></li>
+                <li><a href="#contact" class="contact-link">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- Language switcher ListBox -->
+        <div id="languageSwitcher">
+            <select onchange="switchLanguage(this.value)">
+                <option value="en">English</option>
+                <option value="ar">Arabic</option>
+            </select>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Experience Clearer Sound</h1>
+            <p>Cutting-edge technology for a better hearing experience.</p>
+            <a href="#products" class="btn">Explore Our Products</a>
+        </div>
+
+        <!-- فيديو الخلفية -->
+        <video autoplay muted loop="background-video">
+            <source src="Images/WhatsApp Video 2024-12-19 at 01.08.12_0ec4cfd9.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </section>
+
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Us</h2>
+        <p>At Miracle Hearing Aids, we specialize in delivering high-quality, personalized hearing solutions to improve your quality of life.</p>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products">
+        <div class="services">
+            <h2>Our Products</h2>
+            <div class="products">
+                <div class="product">
+                    <img src="Images/Image1.png" alt="Model X">
+                    <h3>Model X</h3>
+                    <p>Lightweight design with advanced sound clarity.</p>
+                </div>
+                <div class="product">
+                    <img src="Images/Image2.jpg" alt="Model Y">
+                    <h3>Model Y</h3>
+                    <p>Noise reduction technology for crystal-clear conversations.</p>
+                </div>
+                <div class="product">
+                    <img src="Images/Image3.jpg" alt="Model Z">
+                    <h3>Model Z</h3>
+                    <p>Rechargeable and comfortable for daily use.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="services">
+            <div class="service">
+                <h3>Hearing Tests</h3>
+                <p>Comprehensive hearing assessments by experts.</p>
+            </div>
+            <div class="service">
+                <h3>Fittings</h3>
+                <p>Custom fitting to ensure optimal comfort and performance.</p>
+            </div>
+            <div class="service">
+                <h3>Consultations</h3>
+                <p>Personalized consultations to find the perfect solution.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Reach out today to schedule an appointment or learn more!</p>
+        <p>Email: support@miracleear.com</p>
+        <p>Phone: 1-800-555-0199</p>
+        <div class="contact-form">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="text" id="phone" placeholder="Your Phone Number" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <button onclick="sendRequest()">Send Request Now</button>
+        </div>
+        <!-- Error Message -->
+        <p id="errorMessage" style="color: red; display: none;"></p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Miracle Hearing Aids. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        function switchLanguage(language) {
+            if (language === "ar") {
+                document.body.setAttribute("dir", "rtl");
+                document.getElementById("languageSwitcher").querySelector("select").value = "ar";
+                document.querySelector(".about-us").innerText = "من نحن";
+                document.querySelector(".products-link").innerText = "المنتجات";
+                document.querySelector(".services-link").innerText = "الخدمات";
+                document.querySelector(".contact-link").innerText = "التواصل";
+                document.querySelector(".hero h1").innerText = "تجربة صوت أنقى";
+                document.querySelector(".hero p").innerText = "تكنولوجيا متطورة لتجربة سمعية أفضل.";
+                document.querySelector(".btn").innerText = "استكشاف منتجاتنا";
+                document.querySelector("footer p").innerText = "&copy; 2024 Miracle Hearing Aids. جميع الحقوق محفوظة.";
+                document.querySelector("#about h2").innerText = "من نحن";
+                document.querySelector("#about p").innerText = "في Miracle Hearing Aids، نحن متخصصون في تقديم حلول سمعية عالية الجودة والشخصية لتحسين جودة حياتك.";
+                document.querySelector("#products h2").innerText = "منتجاتنا";
+                document.querySelectorAll(".product h3")[0].innerText = "النموذج X";
+                document.querySelectorAll(".product p")[0].innerText = "تصميم خفيف الوزن مع وضوح صوت متقدم.";
+                document.querySelectorAll(".product h3")[1].innerText = "النموذج Y";
+                document.querySelectorAll(".product p")[1].innerText = "تكنولوجيا تقليل الضوضاء لمحادثات واضحة.";
+                document.querySelectorAll(".product h3")[2].innerText = "النموذج Z";
+                document.querySelectorAll(".product p")[2].innerText = "قابلة لإعادة الشحن ومريحة للاستخدام اليومي.";
+                document.querySelector("#services h2").innerText = "خدماتنا";
+                document.querySelectorAll(".service h3")[0].innerText = "اختبارات السمع";
+                document.querySelectorAll(".service p")[0].innerText = "تقييمات سمعية شاملة من الخبراء.";
+                document.querySelectorAll(".service h3")[1].innerText = "التركيب";
+                document.querySelectorAll(".service p")[1].innerText = "تركيب مخصص لضمان الراحة والأداء الأمثل.";
+                document.querySelectorAll(".service h3")[2].innerText = "الاستشارات";
+                document.querySelectorAll(".service p")[2].innerText = "استشارات شخصية لإيجاد الحل الأمثل.";
+                document.querySelector("#contact h2").innerText = "اتصل بنا";
+                document.querySelector("#contact p:nth-of-type(1)").innerText = "تواصل معنا اليوم لتحديد موعد أو لمعرفة المزيد!";
+                document.querySelector("#contact p:nth-of-type(2)").innerText = "البريد الإلكتروني: support@miracleear.com";
+                document.querySelector("#contact p:nth-of-type(3)").innerText = "الهاتف: 1-800-555-0199";
+                document.querySelector("#name").placeholder = "اسمك";
+                document.querySelector("#phone").placeholder = "رقم هاتفك";
+                document.querySelector("#email").placeholder = "بريدك الإلكتروني";
+                document.querySelector("button").innerText = "إرسال طلب الآن";
+            } else {
+                document.body.setAttribute("dir", "ltr");
+                document.getElementById("languageSwitcher").querySelector("select").value = "en";
+                document.querySelector(".about-us").innerText = "About Us";
+                document.querySelector(".products-link").innerText = "Products";
+                document.querySelector(".services-link").innerText = "Services";
+                document.querySelector(".contact-link").innerText = "Contact";
+                document.querySelector(".hero h1").innerText = "Experience Clearer Sound";
+                document.querySelector(".hero p").innerText = "Cutting-edge technology for a better hearing experience.";
+                document.querySelector(".btn").innerText = "Explore Our Products";
+                document.querySelector("footer p").innerText = "&copy; 2024 Miracle Hearing Aids. All Rights Reserved.";
+                document.querySelector("#about h2").innerText = "About Us";
+                document.querySelector("#about p").innerText = "At Miracle Hearing Aids, we specialize in delivering high-quality, personalized hearing solutions to improve your quality of life.";
+                document.querySelector("#products h2").innerText = "Our Products";
+                document.querySelectorAll(".product h3")[0].innerText = "Model X";
+                document.querySelectorAll(".product p")[0].innerText = "Lightweight design with advanced sound clarity.";
+                document.querySelectorAll(".product h3")[1].innerText = "Model Y";
+                document.querySelectorAll(".product p")[1].innerText = "Noise reduction technology for crystal-clear conversations.";
+                document.querySelectorAll(".product h3")[2].innerText = "Model Z";
+                document.querySelectorAll(".product p")[2].innerText = "Rechargeable and comfortable for daily use.";
+                document.querySelector("#services h2").innerText = "Our Services";
+                document.querySelectorAll(".service h3")[0].innerText = "Hearing Tests";
+                document.querySelectorAll(".service p")[0].innerText = "Comprehensive hearing assessments by experts.";
+                document.querySelectorAll(".service h3")[1].innerText = "Fittings";
+                document.querySelectorAll(".service p")[1].innerText = "Custom fitting to ensure optimal comfort and performance.";
+                document.querySelectorAll(".service h3")[2].innerText = "Consultations";
+                document.querySelectorAll(".service p")[2].innerText = "Personalized consultations to find the perfect solution.";
+                document.querySelector("#contact h2").innerText = "Contact Us";
+                document.querySelector("#contact p:nth-of-type(1)").innerText = "Reach out today to schedule an appointment or learn more!";
+                document.querySelector("#contact p:nth-of-type(2)").innerText = "Email: support@miracleear.com";
+                document.querySelector("#contact p:nth-of-type(3)").innerText = "Phone: 1-800-555-0199";
+                document.querySelector("#name").placeholder = "Your Name";
+                document.querySelector("#phone").placeholder = "Your Phone Number";
+                document.querySelector("#email").placeholder = "Your Email";
+                document.querySelector("button").innerText = "Send Request Now";
+            }
+        }
+
+        function sendRequest() {
+            let name = document.getElementById("name").value;
+            let phone = document.getElementById("phone").value;
+            let email = document.getElementById("email").value;
+
+            if (name && phone && email) {
+                alert("Thank you, " + name + ". Your request has been sent.");
+            } else {
+                document.getElementById("errorMessage").style.display = "block";
+                document.getElementById("errorMessage").innerText = "Please fill in all fields.";
+            }
+        }
+    </script>
+</body>
+
+</html>
